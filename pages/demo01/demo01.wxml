@@ -1,0 +1,33 @@
+<!--pages/demo01/demo01.wxml-->
+<!-- 
+  1:text 相当于html钟的span标签,行内元素不换行
+  2:view 相当于div标签,块级元素换行
+ -->
+<text>pages/demo01/demo01.wxml</text>
+<text>pages/demo01/demo01.wxml</text>
+<view>块级元素</view>
+<view>
+  {{msg}}
+</view>
+<text class="{{number}}" selectable="false" space="false" decode="false">
+  {{number}}  {{person.age}}
+</text>
+<view>
+  <view wx:for="{{list}}" wx:item="item" wx:index="index" wx:key="age">
+    序号:{{index}}
+    姓名:{{item.name}}
+    年龄:{{item.age}}
+    -----------
+  </view>
+  
+  <view wx:for="{{person}}" wx:key="*this">
+    {{index+"::"+item}}
+  </view>
+</view> 
+  <input value="{{number}}" type="number" bindinput="handleInput" />
+  <button bindtap="handletap" data-operation2="{{1}}">+</button>
+  <button bindtap="handletap"  data-operation2="{{-1}}">-</button>
+  <view>
+    {{number}}
+  </view>
+  
